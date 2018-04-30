@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<script src="mapCoords.js"></script>
+<script src="generateMap.js"></script>
+<script src="stackblur.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.3/seedrandom.min.js"></script>
+
+
+
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, td, th {
+    border: 1px solid black;
+}
+
+
+</style>
+
+
+</script>
+
+
+
+<html>
+	
+
+	<body onload="startCoord()">
+
+<table>
+
+	
+
+	
+	
+
+	<table >
+		<tr>
+			<td rowspan="2" ><button onclick="generateMap()">Generate map</button></td>
+			<td rowspan="2" ><button onclick="readFromCanvas()">Read to Console</button></td>
+
+			<th>Size 2<sup>n</sup></th>
+			<th>Random Amount</th>
+			<th>Reduction Amount</th>
+			<th>Seed Value</th>
+			<th>Color</th>
+			
+
+
+			<td><input title="Top Left Starting Value" type="number" id="topLeft" value="2000" min="1" max="10000"></td>
+			<td><input title="Top Right Starting Value" type="number" id="topRight" value="1500" min="1" max="10000"></td>
+
+			<th>Scale Factor</th>
+	
+			<td rowspan="2" ><button onclick="stackBlur()">Blur Map</button></td>
+
+			<th>Blur Amount</th>
+
+			
+
+
+		</tr>
+		<tr>	
+			<td><input type="number" id="nVal" value="7" min="1" max="10"></td>
+			<td><input type="number" id="randVal" value="1500" min="1" max="10000"></td>
+			<td><input type="number" id="reductionVal" value=".125" min="1" max="10000"></td>
+			<td><input type="number" id="seed" value="777" min="1" max="10000"></td>
+			
+			<td> <select id="channel" size="1">
+					<option value="0">Red</option>
+					<option value="1">Green</option>
+					<option value="2">Blue</option>
+					<option value="3" selected="selected" >Alpha</option>
+				</select> 
+			</td>
+
+			<td><input title="Bottom Left Starting Value" type="number" id="bottomLeft" value="3000" min="1" max="10000"></td>
+			<td><input title="Bottom Right Starting Value" type="number" id="bottomRight" value="1000" min="1" max="10000"></td>
+			<td><input type="number" id="scaleFactor" value="2" min="1" max="10"></td>
+
+			<td><input type="number" id="blur" value="1" min="1" max="10000"></td>
+
+
+		</tr>
+	</table>
+
+	<br>
+
+	<canvas onclick="getCoord()" id="myCanvas" >
+
+
+	</body>
+</html>
